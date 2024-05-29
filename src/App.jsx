@@ -1,12 +1,12 @@
-import Hero from './Sections/Hero/Hero'
-import './App.css'
-
+import React from "react";
+import Home from "./Component/Home/Home";
+import HomePage from "./Pages/HomePage";
 function App() {
   return (
-   <div className="AppContainer">
-   <Hero/>
-   </div>
-  )
+    <div className="App">
+      <HomePage/>
+    </div>
+  );
 }
 
-export default App
+export default App;

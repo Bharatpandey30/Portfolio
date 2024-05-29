@@ -1,0 +1,102 @@
+.navbarContainer {
+    height: 80px;
+    width: 100%;
+    background-color: transparent; /* Initially transparent */
+    position: fixed;
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    align-items: center;
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    z-index: 1000;
+  }
+  
+  .navbarContainer.scrolled {
+    background-color: #000000; /* Change to black when scrolled */
+  }
+  
+  /* Other styles... */
+.navRight{
+    color: white;
+    width: auto;
+    margin-left: 100px;
+    position: relative;
+    justify-content: start;
+    font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: xx-large;
+    display: flex;
+    right: 0;
+    top: 0;
+    }
+.navleft {
+    display: flex;
+    position: fixed; /* Fixed position to stick to the right side */
+    justify-content: flex-end; /* Align items to the end of the flex container */
+    font-size: xx-large;
+    align-items: center; /* Center vertically */
+    right: 0; /* Align to the right side of the window */
+    top: 0; /* Align to the top of the window */
+  }
+  
+.NavItem{
+    color: white;
+    width: auto;
+    margin: 30px;
+    font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: x-large;
+}
+
+.NavItem:hover{
+   color: rgb(212, 210, 210);
+   cursor: pointer;
+}
+.navRight:hover{
+    color: rgb(212, 210, 210);
+    cursor: pointer;
+ }
+.navSmall {
+    color: white;
+    visibility: hidden;
+    display: none; /* Hide .navSmall by default */
+}
+
+@media screen and (max-width: 1118px) {
+    .navRight {
+      width: auto;
+      margin-left: 10px;
+    }
+    .navleft{
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .navRight {
+      display: none;
+    }
+    .NavItem {
+      text-align: center; /* Align center horizontally */
+      justify-content: center; /* Align center vertically */
+      margin: 15px;
+    }
+    .navleft {
+     text-align:start; /* Align center horizontally */
+     position: relative;
+     display: flex;
+     justify-content: flex-start;
+     margin-left: 40px;
+     margin-bottom: 10px;
+     margin-right: auto; /* Auto margin for spacing */
+    }
+    .navSmall {
+        color: white;
+        visibility: visible;
+        position: fixed; /* Fixed position to stick to the right side */
+        top: 0; /* Align to the top of the window */
+        right: 0; /* Align to the right side of the window */
+        margin-right: 20px; /* Add margin for spacing */
+        margin-top: 20px; /* Add margin from the top */
+      }
+      
+  }
+  

@@ -1,0 +1,132 @@
+.educationContainer {
+  display: flex;
+  position:relative;
+  flex-direction: row;
+  justify-content: center;
+  border-top: #f0f0f0 solid 1px;
+  border-bottom: #f0f0f0 solid 1px;
+  padding-bottom: 10px ;
+  background-image: linear-gradient(to right, rgba(36, 29, 33, 0.5) 30%, rgba(74, 47, 189, 0.5) 80%);
+}
+
+.educationContainer h1 {
+  color: #f0f0f0;
+  font-size: 3em;
+  margin-left: -100px;
+}
+
+.educationImage {
+  margin-top: 150px;
+  margin-left: -80px;
+}
+
+.educationItem {
+  display: flex;
+  width: 650px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+  margin-left: -50px;
+  border-radius: 10px;
+  box-shadow: -5px 0 12px rgba(229, 224, 224, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.educationItem:hover {
+  transform: translateY(-5px);
+}
+
+.educationContent {
+  flex: 1;
+  color: #f0f0f0;
+  padding-left: 30px;
+  margin-right: 100px;
+}
+
+.educationContent2 {
+  flex: 1;
+  color: #f0f0f0;
+  padding-left: 30px;
+  margin-right: 60px;
+}
+
+.educationItem h2 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.educationItem p {
+  margin-bottom: 5px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 1188px) {
+  .educationContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    max-width: 100%; /* Set maximum width to prevent exceeding general width */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    display: flex;
+  }
+
+  .educationContainer h1 {
+    margin-left: 0;
+  }
+
+  .educationImage {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .educationItem {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0;
+    font-size: large;
+  }
+
+  .educationContent,
+  .educationContent2 {
+    padding-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .educationContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    max-width: 100%; /* Set maximum width to prevent exceeding general width */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    display: flex;
+  }
+
+  .educationContainer h1 {
+    margin-left: 0;
+  }
+
+  .educationImage {
+    margin-top: 20px;
+    margin-left: 0;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .educationItem {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 0;
+    font-size: large;
+  }
+
+  .educationContent,
+  .educationContent2 {
+    padding-left: 20px;
+    margin-right: 20px;
+  }
+}

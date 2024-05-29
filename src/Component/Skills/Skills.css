@@ -1,0 +1,181 @@
+.skillsContainer {
+    height: 550px;
+    width: 60%;
+    margin-top: -300px;
+    display: flex;
+    flex-direction: column; /* Changed to column layout */
+    justify-content: center;
+    align-items: center;
+    margin-left: 360px;
+    background-color: rgb(15, 1, 1);
+    border-radius: 50px;
+    overflow: hidden;
+
+  }
+  
+  .swipeLeft {
+    transition: 1000ms;
+    transform: translateX(-100%); /* Move element left (off-screen) */
+  }
+  
+  .swipeRight {
+    transform: translateX(0%); /* Move element to its original position */
+  }
+  
+  .text {
+    color: white;
+    font-size: 3em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 0px; /* Adjusted margin-top */
+    margin-left: 10px;
+  }
+  
+  .imgBlock {
+    display: grid;
+    transition: transform 0.5s ease; /* Smooth transition for swiping */
+    padding: 20px;
+    margin: 20px;
+    margin-left: 26px;
+    justify-content: center;
+    align-items: center;
+ 
+  }
+  
+  .imgBlock span {
+    color: white;
+    font-size: x-large;
+    text-align: center;
+  }
+  
+  .img {
+    margin-top: 20px;
+    margin-left: 30px;
+    display: flex;
+  }
+  
+  .imgWrapper {
+    width: 820px;
+    height: 340px;
+    padding: 20px;
+    border: 5px solid transparent; /* Set initial border as transparent */
+    border-image: linear-gradient(to right, #6e78d6, #af5fb2) 30; /* Apply linear gradient border */
+    display: flex;
+    border-radius: 20px; /* Adjust the border radius as needed */
+    margin-bottom: 30px;
+    overflow: hidden;
+    margin-left: -30px;
+  
+    
+    --border-angle: 0turn; 
+    --main-bg: conic-gradient(
+        from var(--border-angle),
+        #213,
+        #112 5%,
+        #112 60%,
+        #213 95%
+      );
+    
+    border: solid 5px transparent;
+    border-radius: 2em;
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+    
+    background: 
+
+      var(--main-bg) padding-box,
+    
+      var(--gradient-border) border-box, 
+     
+      var(--main-bg) border-box;
+    
+    background-position: center center;
+  
+    animation: bg-spin 3s linear infinite;
+  }
+    @keyframes bg-spin {
+      to {
+        --border-angle: 1turn;
+      }
+    }
+  
+    &:hover {
+      animation-play-state:running;
+    }
+  
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
+  
+  
+  .Img1 {
+    height: 200px;
+    width: 350px;
+  }
+  
+  .rightArrow {
+    margin-right: 20px;
+    margin-top: 200px;
+    color: white;
+  }
+  
+  .leftArrow {
+    margin-right: 25px ;
+    margin-top: 200px;
+    color: white;
+  }
+  
+  /* Added position styles for arrows */
+  .leftArrow,
+  .rightArrow {
+
+    transform: translateY(-50%);
+    font-size: 4em;
+    cursor: pointer;
+  }
+  .shortScreen {
+    display: none; /* Hide by default for small screens */
+  }
+  .shortScreen {
+    display: none; /* Hide by default for larger screens */
+  }
+  
+  @media screen and (max-width: 1568px) {
+    .shortScreen {
+      display: block; /* Show on smaller screens */
+      margin-top: 20px; /* Adjust margin as needed */
+    }
+  
+    .skillsContainer {
+      position: relative; /* Optional: Hide the main container */
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .shortScreen {
+      display: block; /* Show on small screens */
+      margin-top: 20px; /* Adjust margin as needed */
+    }
+  
+    .skillsContainer {
+      display: none; 
+    }
+  
+    .skillsList {
+      list-style-type: none; /* Remove default list styling */
+      padding: 0; /* Remove default padding */
+      text-align: center; /* Center text within the list */
+    }
+  
+    .skillsList li {
+      font-size: 1.2em; /* Adjust font size as needed */
+      margin-bottom: 10px; /* Adjust margin as needed */
+      cursor: pointer; /* Show pointer cursor on hover */
+    }
+  
+    .skillsList li:hover {
+      color: blue; /* Change text color on hover */
+    }
+  }
+  
+  

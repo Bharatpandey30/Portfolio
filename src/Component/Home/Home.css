@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    background-color: black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* @media screen and (max-width: 1118px) {
+    body{
+        width: fit-content;
+    }
+   }
+   
+
+@media screen and (max-width: 768px) {
+    
+    body{
+        width: fit-content;
+    }
+} */

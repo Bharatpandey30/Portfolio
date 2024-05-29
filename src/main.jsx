@@ -1,13 +1,20 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { ThemeProvider } from './common/ThemeContext.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import App from './App';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+
+const rootElement = document.getElementById('root');
+
+const router = (
+  <Routes>
+    <Route path="/" element={<App />} />
+  </Routes>
+);
+
+ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <App />
-      </ThemeProvider>
+    <Router>{router}</Router>
   </React.StrictMode>,
-)
+  rootElement
+);
