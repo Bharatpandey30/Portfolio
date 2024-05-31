@@ -60,7 +60,7 @@ const Navbar = () => {
         <span className='NavItem'>Relevant Projects</span>
       </div>
       <div className='navLeft'>
-        <span className='NavItem' onClick={scrollToContact}>Contact me</span>
+        <span className='NavItems' onClick={scrollToContact}>Contact me</span>
         <DensitySmallIcon className='navSmall' onClick={handleClick} />
         <SideBar 
           handleClick={handleClick}

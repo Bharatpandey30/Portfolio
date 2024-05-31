@@ -10,15 +10,23 @@
   overflow: hidden;
 }
 .cont{
+  position: relative;
   display: flex;
+  flex-direction: column;
   height: 600px;
   margin-bottom: 100px;
   margin-left: 100px;
 }
-.wrkImg{
-  margin-left: 100px;
-  margin-top: 20px;
+.wrkImg {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+
+  transform: translateY(-30%);
 }
+
 @keyframes floatAnimation {
   0% {
     transform: translateY(-20);
@@ -49,7 +57,7 @@
   font-size: 48px; /* Reduced font size */
   font-weight: bold;
   margin-top: 50px;
-  margin-left: 700px;
+  text-align: center;
   margin-bottom: 20px; /* Increased margin bottom */
   color: #fff; /* White text color */
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -59,7 +67,6 @@
   border-left: 4px solid #e74c3c; /* Red border color */
   padding-left: 20px; /* Increased padding left */
   margin-left: 200px;
-  margin-bottom: 100px;
   width: auto;
 }
 
@@ -87,29 +94,19 @@
   position: sticky;
 }
 
-.job-description {
-  flex: 1 1 100%;
-  margin-top: 10px;
-}
-
-/* Style for responsibilities list */
-.job-description ul {
-  padding-left: 20px;
-  margin: 0;
-  list-style-type: disc;
-}
-
-.job-description li {
-  margin-bottom: 5px;
-}
-
 .job-description li {
   margin-bottom: 8px; /* Increased margin bottom */
 }
 
 /* Media query for screens with a maximum width of 768px */
 
-@media screen and (max-width: 1188px) {
+@media screen and (max-width: 1388px) {
+
+  .ExpContainer {
+
+    overflow: hidden;
+  }
+
 
   .j-logo {
     height: 60px; /* Reduced height for smaller screens */
@@ -119,7 +116,7 @@
   }
 
   .section-title {
-    margin-left: 100px;
+
     font-size: 24px; /* Reduced font size for smaller screens */
     margin-top: 40px; /* Reduced margin top for smaller screens */
     
@@ -141,9 +138,7 @@
     font-size: 12px; /* Reduced font size for smaller screens */
     margin-bottom: 0px; /* Reduced margin bottom for smaller screens */
   }
-  .job-description ul {
-   display: inline;
-  }
+  
  
   .wrkImg{
     height: 300px;
@@ -151,10 +146,14 @@
 
 
   .cont {
-    display: flex; /* Display the cont as flex container */
-    flex-direction: column; /* Change cont to column layout for smaller screens */
-    margin-left: 0; /* Reset margin left for smaller screens */
-    margin-bottom: 70px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    max-width: 100%; /* Set maximum width to prevent exceeding general width */
+    overflow-x: hidden;
+    overflow-y: hidden;  /* Hide horizontal overflow */
+    display: flex;
   }
 }
 @media screen and (max-width: 768px) {
@@ -202,6 +201,5 @@
     display: flex; /* Display the cont as flex container */
     flex-direction: column; /* Change cont to column layout for smaller screens */
     margin-left: 0; /* Reset margin left for smaller screens */
-    margin-bottom: 70px;
   }
 }

@@ -58,15 +58,11 @@ const WorkExperience = () => {
     <div className="Expcontainer">
       <div className="section-title">Work Experience</div>
       <div className="cont">
-        <div className="wr">
       {jobExperiences.map((job, index) => (
         <JobExperience key={index} {...job} />
       ))}
       </div>
-      <div className="wrkImg">
-        <img className='wrkImg' src={wrk} alt='wrk img'/>
-      </div>
-      </div>
+      {/* <img className='wrkImg' src={wrk} alt='wrk img'/> */}
     </div>
   );
 };

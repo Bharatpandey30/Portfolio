@@ -93,11 +93,7 @@
     max-width: 150px;
     min-width: 80px;
   }
-  .ast {
-    width: 20%;
-    max-width: 150px;
-    min-width: 80px;
-  }
+
   .greeting h2 {
     font-size: 2em;
   }
@@ -116,9 +112,8 @@
   .greeting h1 {
     font-size: 1.2em;
   }
-  .ast {
-    width: 50%;
-    max-width: 200px;
+  .BodyTopContainer {
+    height:650px ;
   }
 }
 
@@ -133,6 +128,6 @@
     font-size: 1em;
   }
   .BodyTopContainer {
-    height: 90vh;
+    height:400px ;
   }
 }
