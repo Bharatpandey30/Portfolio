@@ -9,7 +9,7 @@ import mern from '../../assets /img/mern.png';
 import data from '../../assets /img/dataan.jpeg';
 import sql from '../../assets /img/sql.avif';
 import python from '../../assets /img/python.webp';
-import manymore from '../../assets /img/manymore.png'
+import manymore from '../../assets /img/manymore.png';
 
 function Skills() {
   const [slidePosition, setSlidePosition] = useState(0);
@@ -26,27 +26,27 @@ function Skills() {
   }, []);
 
   const handleRightClick = () => {
-    const newPosition = slidePosition + 1;
-    if (newPosition < 6) {
-      setSlidePosition(newPosition);
-    } else {
-      setSlidePosition(0);
-    }
+    setSlidePosition((prevPosition) => (prevPosition + 1) % 8);
+  };
+
+  const handleLeftClick = () => {
+    setSlidePosition((prevPosition) => (prevPosition - 1 + 8) % 8);
   };
 
   const handleClick = () => {
     window.open('/resume.pdf', 'blank');
   };
 
-  const handleLeftClick = () => {
-    const newPosition = slidePosition - 1;
-    setSlidePosition(newPosition);
-    if (newPosition > -6) {
-      setSlidePosition(newPosition);
-    } else {
-      setSlidePosition(0);
-    }
-  };
+  const images = [
+    { src: meter1, text: 'Front End Development' },
+    { src: meter2, text: 'Full Stack Development' },
+    { src: meter3, text: 'Web Development' },
+    { src: mern, text: 'Mern Stack' },
+    { src: data, text: 'Data Analyst' },
+    { src: sql, text: 'SQL' },
+    { src: python, text: 'Python' },
+    { src: manymore, text: 'Click here ☝️', onClick: handleClick }
+  ];
 
   return (
     <div className='skillsContainer'>
@@ -54,66 +54,31 @@ function Skills() {
       <div className='img'>
         <KeyboardDoubleArrowLeftIcon
           onClick={handleLeftClick}
-          className={`leftArrow ${slidePosition > 0 ? 'swipeRight' : 'swipeLeft'}`}
-          style={{ fontSize: '4em' }}
+          className={`leftArrow ${slidePosition > 0 ? 'swipeRight' : 'swipeLeft'}` }   style={{ fontSize: '3em' }}
         />
-        <div className='imgWrapper' >
-          <div className='imgBlock'>
-            <img className='Img1' style={{ transform: `translateX(-${slidePosition * 150}%)` }} src={meter1} alt='Image' />
-            <span className='imgtext' style={{ transform: `translateX(-${slidePosition * 150}%)` }}>Front End Development</span>
-          </div>
-          <div className='imgBlock'>
-            <img className='Img1' style={{ transform: `translateX(-${slidePosition * 150}%)` }} src={meter2} alt='Image' />
-            <span className='imgtext' style={{ transform: `translateX(-${slidePosition * 150}%)` }}>Full stack Development</span>
-          </div>
-          <div className='imgBlock'>
-            <img className='Img1'style={{ transform: `translateX(-${slidePosition * 150}%)` }} src={meter3} alt='Image' />
-            <span  className='imgtext' style={{ transform: `translateX(-${slidePosition * 150}%)` }}> Web Development</span>
-          </div>
-          <div className='imgBlock'>
-            <img className='Img1'style={{ transform: `translateX(-${slidePosition * 150}%)` }} src={mern} alt='Image' />
-            <span className='imgtext' style={{ transform: `translateX(-${slidePosition * 150}%)` }}> Mern Stack</span>
-          </div>
-          <div className='imgBlock'>
-            <img className='Img1'style={{ transform: `translateX(-${slidePosition * 150}%)` }} src={data} alt='Image' />
-            <span className='imgtext' style={{ transform: `translateX(-${slidePosition * 150}%)` }}>Data analyst</span>
-          </div>
-          <div className='imgBlock'>
-            <img className='Img1'style={{ transform: `translateX(-${slidePosition * 150}%)` }} src={sql} alt='Image' />
-            <span className='imgtext' style={{ transform: `translateX(-${slidePosition * 150}%)` }}> SQL</span>
-          </div>
-          <div className='imgBlock'>
-            <img className='Img1'style={{ transform: `translateX(-${slidePosition * 150}%)` }} src={python} alt='Image' />
-            <span className='imgtext' style={{ transform: `translateX(-${slidePosition * 150}%)` }}> Python</span>
-          </div>
-          <div className='imgBlock'>
-            <img className='Img1'style={{ transform: `translateX(-${slidePosition * 150}%)` }} onClick={handleClick} src={manymore} alt='Image' />
-            <span className='imgtext' style={{ transform: `translateX(-${slidePosition * 150}%)` }}> click here ☝️</span>
-          </div>
+        <div className='imgWrapper'>
+          {images.map((image, index) => (
+            <div key={index} className='imgBlock' style={{ transform: `translateX(-${slidePosition * 100}%)` }}>
+              <img className='Img1' src={image.src} alt='Skill' onClick={image.onClick || null} />
+              <span className='imgtext'>{image.text}</span>
+            </div>
+          ))}
         </div>
         <KeyboardDoubleArrowRightIcon
           onClick={handleRightClick}
-          className={`rightArrow ${slidePosition < 2 ? 'swipeRight' : 'swipeLeft'}`}
-          style={{ fontSize: '4em' }}
-        />
+          className={`rightArrow ${slidePosition < images.length - 1 ? 'swipeRight' : 'swipeLeft'}`}
+          style={{ fontSize: '3em' }} />
       </div>
-      
-
-    {isSmallScreen && (
+      {isSmallScreen && (
         <div className='shortScreen'>
           <ul className='skillsList'>
-            <li>Front End Development</li>
-            <li>Full Stack Development</li>
-            <li>Web Development</li>
-            <li>Mern Stack</li>
-            <li>Data Analyst</li>
-            <li>SQL</li>
-            <li>Python</li>
+            {images.map((image, index) => (
+              <li key={index} onClick={image.onClick || null}>{image.text}</li>
+            ))}
           </ul>
         </div>
-    )}
+      )}
     </div>
-   
   );
 }
 

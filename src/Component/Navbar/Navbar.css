@@ -56,7 +56,7 @@
 .navSmall {
     color: white;
     visibility: hidden;
-    display: none; /* Hide .navSmall by default */
+    display: none;
 }
 
 @media screen and (max-width: 1118px) {

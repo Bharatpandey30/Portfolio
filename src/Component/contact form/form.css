@@ -2,7 +2,7 @@
 .bigCont {
   display: flex;
   flex-direction: column;
-  border-radius: 20px; /* Increased border radius */
+  overflow: hidden;
 }
 
 /* Form Container */

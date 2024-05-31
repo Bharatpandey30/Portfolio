@@ -1,12 +1,11 @@
 .skillsContainer {
     height: 550px;
-    width: 60%;
+    width: 100%;
     margin-top: -300px;
     display: flex;
     flex-direction: column; /* Changed to column layout */
     justify-content: center;
     align-items: center;
-    margin-left: 360px;
     background-color: rgb(15, 1, 1);
     border-radius: 50px;
     overflow: hidden;
@@ -130,7 +129,7 @@
   .rightArrow {
 
     transform: translateY(-50%);
-    font-size: 4em;
+    
     cursor: pointer;
   }
   .shortScreen {
@@ -140,25 +139,31 @@
     display: none; /* Hide by default for larger screens */
   }
   
-  @media screen and (max-width: 1568px) {
+  @media screen and (max-width: 1168px) {
     .shortScreen {
       display: block; /* Show on smaller screens */
       margin-top: 20px; /* Adjust margin as needed */
     }
   
     .skillsContainer {
-      position: relative; /* Optional: Hide the main container */
+      position: relative;
+     
+    }
+    .imgWrapper{
+      position: relative;
+      width: 600px;
     }
   }
   
   @media screen and (max-width: 768px) {
     .shortScreen {
       display: block; /* Show on small screens */
-      margin-top: 20px; /* Adjust margin as needed */
+      
     }
   
     .skillsContainer {
-      display: none; 
+      position: relative;
+      margin-top: -200px;
     }
   
     .skillsList {
@@ -175,6 +180,16 @@
   
     .skillsList li:hover {
       color: blue; /* Change text color on hover */
+    }
+    .imgWrapper{
+    
+      width: 330px;
+      height: 300px;
+    }
+    .Img1{
+      height: 200px;
+      width: 250px;
+  
     }
   }
   
